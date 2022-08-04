@@ -1,13 +1,102 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* Login page */
+
+.container-login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px 0;
+  font-size: 20px;
+  background-image: url(./images/vecteezy_earphone-headset-musical-instrument-low-poly-wireframe_.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.logo-login {
+  width: 100px;
+  height: 100px;
+  background-image: url(./images/anonymous.png);
+  background-size: cover;
+  border-radius: 100%;
+}
+
+.container-login form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+
+.container-login img {
+  width: 150px;
+  border-radius: 100%;
+}
+
+.container-login input {
+  width: 300px;
+  height: 25px;
+  border-radius: 15px;
+  padding-left: 15px;
+}
+
+.container-login input::placeholder {
+  font-weight: 700;
+}
+
+.container-login button {
+  box-shadow: 0px 10px 14px -7px #276873;
+  background: linear-gradient(to bottom, #0f4254 5%, #408c99 100%);
+  background-color: #0f4254;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px 32px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #3d768a;
+}
+
+.container-login button:hover {
+  background:linear-gradient(to bottom, #408c99 5%, #0f4254 100%);
+	background-color:#408c99;
+}
+
+.container-login button:active {
+  position:relative;
+	top:5px;
+}
+
+.container-login button:disabled {
+  box-shadow: 0px 10px 14px -7px #021a1f;
+  background: linear-gradient(to bottom, #010a0e 5%, #244247 100%);
+  background-color: #000000;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
