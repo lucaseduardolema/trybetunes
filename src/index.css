@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
 
 * {
   margin: 0;
@@ -7,9 +9,7 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Cinzel', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
@@ -106,21 +106,17 @@ header {
   justify-content: space-around;
   align-items: center;
   gap: 0 20%;
-  min-height: 160px;
-  /* background: rgba(58, 12, 163, 0.3);
-  background: linear-gradient(
-    180deg,
-    rgba(58, 12, 163, 0.2) 0%,
-    rgba(63, 55, 201, 0.2) 69%,
-    rgba(67, 97, 238, 0.2) 100%
-  ); */
+  min-height: 110px;
+  font-family: "Dancing Script", cursive;
+  color: white;
+  background-color: black;
 }
 
 .logo-header {
-  width: 115px;
-  height: 120px;
-  background-image: url(./images/vecteezy_music-note-logo_1200904.png);
-  background-size: 115px 100px;
+  width: 100px;
+  height: 90px;
+  background-image: url(./images/vecteezy_headphones-clipart-design-illustartion_9384601_4.png);
+  background-size: 100px 90px;
   background-repeat: no-repeat;
 }
 
@@ -131,18 +127,20 @@ header nav {
 
 header a {
   text-decoration: none;
-  font-family: "Dancing Script", cursive;
   font-size: 22px;
   font-weight: 400;
-  color: #f72585;
+  color: white;
+}
+
+header a:active {
+  position: relative;
+  top: 5px;
 }
 
 .user-info {
   display: flex;
   justify-content: center;
   width: 15%;
-  font-family: "Dancing Script", cursive;
   font-size: 28px;
   font-weight: 700;
-  color: #f72585;
 }
