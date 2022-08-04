@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
-import Loading from './Loading';
+import ReactLoading from 'react-loading'
 
 class Header extends React.Component {
   constructor() {
@@ -33,15 +33,18 @@ class Header extends React.Component {
     const { name, isLoading } = this.state;
     return (
       <header data-testid="header-component">
+        <div className='logo-header'></div>
         <nav>
           <Link data-testid="link-to-search" to="/trybetunes/search">Search</Link>
           <Link data-testid="link-to-favorites" to="/trybetunes/favorites">Favorites</Link>
           <Link data-testid="link-to-profile" to="/trybetunes/profile">Profile</Link>
         </nav>
+        <div className='user-info'>
         {
-          isLoading ? <Loading />
-            : <span data-testid="header-user-name">{name}</span>
+          isLoading ? <ReactLoading color='#f72585' type='bars' width='40px' height='40px' />
+            : <p>{`Olá `}<span data-testid="header-user-name">{name}</span></p>
         }
+        </div>
       </header>
     );
   }

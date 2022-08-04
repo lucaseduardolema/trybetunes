@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +12,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100vh;
+  background-image: url(./images/vecteezy_earphone-headset-musical-instrument-low-poly-wireframe_.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 code {
@@ -28,9 +35,6 @@ code {
   align-items: center;
   gap: 30px 0;
   font-size: 20px;
-  background-image: url(./images/vecteezy_earphone-headset-musical-instrument-low-poly-wireframe_.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .logo-login {
@@ -80,13 +84,13 @@ code {
 }
 
 .container-login button:hover {
-  background:linear-gradient(to bottom, #408c99 5%, #0f4254 100%);
-	background-color:#408c99;
+  background: linear-gradient(to bottom, #408c99 5%, #0f4254 100%);
+  background-color: #408c99;
 }
 
 .container-login button:active {
-  position:relative;
-	top:5px;
+  position: relative;
+  top: 5px;
 }
 
 .container-login button:disabled {
@@ -95,8 +99,50 @@ code {
   background-color: #000000;
 }
 
-.loading {
+/* Header component */
+
+header {
   display: flex;
+  justify-content: space-around;
   align-items: center;
+  gap: 0 20%;
+  min-height: 160px;
+  /* background: rgba(58, 12, 163, 0.3);
+  background: linear-gradient(
+    180deg,
+    rgba(58, 12, 163, 0.2) 0%,
+    rgba(63, 55, 201, 0.2) 69%,
+    rgba(67, 97, 238, 0.2) 100%
+  ); */
+}
+
+.logo-header {
+  width: 115px;
+  height: 120px;
+  background-image: url(./images/vecteezy_music-note-logo_1200904.png);
+  background-size: 115px 100px;
+  background-repeat: no-repeat;
+}
+
+header nav {
+  display: flex;
+  gap: 0 100px;
+}
+
+header a {
+  text-decoration: none;
+  font-family: "Dancing Script", cursive;
+  font-size: 22px;
+  font-weight: 400;
+  color: #f72585;
+}
+
+.user-info {
+  display: flex;
   justify-content: center;
+  width: 15%;
+  font-family: "Dancing Script", cursive;
+  font-size: 28px;
+  font-weight: 700;
+  color: #f72585;
 }

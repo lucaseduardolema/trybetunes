@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import Loading from "../components/Loading";
 import { createUser } from "../services/userAPI";
+import ReactLoading from 'react-loading'
 
 
 class Login extends React.Component {
@@ -59,7 +59,7 @@ class Login extends React.Component {
         <span className="logo-login"></span>
         {isSavedName && <Redirect to="/trybetunes/search" />}
         {isLoading ? (
-          <Loading />
+          <ReactLoading type='bars' color='#f72585' width='100px' height='100px' />
         ) : (
           <form>
             <label htmlFor="user">
