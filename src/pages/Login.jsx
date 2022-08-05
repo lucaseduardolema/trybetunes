@@ -1,8 +1,7 @@
+import PropTypes from "prop-types";
 import React from "react";
-import { Redirect } from "react-router-dom";
 import { createUser } from "../services/userAPI";
-import ReactLoading from 'react-loading'
-
+import ReactLoading from "react-loading";
 
 class Login extends React.Component {
   constructor() {
@@ -12,7 +11,6 @@ class Login extends React.Component {
       user: "",
       isDisabled: true,
       isLoading: false,
-      isSavedName: false,
     };
   }
 
@@ -31,7 +29,7 @@ class Login extends React.Component {
         } else {
           this.setState({
             isDisabled: true,
-          })
+          });
         }
       }
     );
@@ -44,22 +42,25 @@ class Login extends React.Component {
       },
       async () => {
         const { user } = this.state;
+        const { history } = this.props;
         await createUser({ name: user });
-        this.setState({
-          isSavedName: true,
-        });
+        history.push("/trybetunes/search");
       }
     );
   };
 
   render() {
-    const { user, isDisabled, isLoading, isSavedName } = this.state;
+    const { user, isDisabled, isLoading } = this.state;
     return (
       <div data-testid="page-login" className="container-login">
         <span className="logo-login"></span>
-        {isSavedName && <Redirect to="/trybetunes/search" />}
         {isLoading ? (
-          <ReactLoading type='bars' color='#f72585' width='100px' height='100px' />
+          <ReactLoading
+            type="bars"
+            color="#f72585"
+            width="100px"
+            height="100px"
+          />
         ) : (
           <form>
             <label htmlFor="user">
@@ -69,7 +70,7 @@ class Login extends React.Component {
                 type="text"
                 name="user"
                 value={user}
-                placeholder='Usuário'
+                placeholder="Usuário"
                 onChange={this.handleChange}
               />
             </label>
@@ -92,5 +93,11 @@ class Login extends React.Component {
     );
   }
 }
+
+Login.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }),
+};
 
 export default Login;
