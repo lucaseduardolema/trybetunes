@@ -64,7 +64,7 @@ class Search extends React.Component {
             <form>
               <input
                 data-testid="search-artist-input"
-                type="text"
+                type="search"
                 name="search"
                 value={search}
                 onChange={this.handleChange}
@@ -88,26 +88,27 @@ class Search extends React.Component {
             {isLoading ? (
               <Loading />
             ) : (
-              results.map((result) => {
-                const {
+              results.map(
+                ({
                   artistName,
                   artworkUrl100,
                   collectionId,
                   collectionName,
-                } = result;
-                return (
-                  <div key={collectionId} className='search-card'>
-                    <img src={artworkUrl100} alt={artistName} />
-                    <p>{artistName.slice(0, 30)}</p>
-                    <Link
-                      data-testid={`link-to-album-${collectionId}`}
-                      to={`/trybetunes/album/${collectionId}`}
-                    >
-                      <p>{collectionName.slice(0, 30)}</p>
-                    </Link>
-                  </div>
-                );
-              })
+                }) => {
+                  return (
+                    <div key={collectionId} className="search-card">
+                      <img src={artworkUrl100} alt={artistName} />
+                      <p>{artistName.slice(0, 30)}</p>
+                      <Link
+                        data-testid={`link-to-album-${collectionId}`}
+                        to={`/trybetunes/album/${collectionId}`}
+                      >
+                        <p>{collectionName.slice(0, 30)}</p>
+                      </Link>
+                    </div>
+                  );
+                }
+              )
             )}
           </div>
         </main>
