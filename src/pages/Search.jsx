@@ -57,48 +57,54 @@ class Search extends React.Component {
     const { isDisabled, search, isLoading, hasResults, termSearch, results } =
       this.state;
     return (
-      <div data-testid="page-search">
+      <>
         <Header />
-        <form>
-          <input
-            data-testid="search-artist-input"
-            type="text"
-            name="search"
-            value={search}
-            onChange={this.handleChange}
-          />
-          <button
-            data-testid="search-artist-button"
-            type="button"
-            disabled={isDisabled}
-            onClick={this.searchResult}
-          >
-            Pesquisar
-          </button>
-        </form>
-        {isLoading && <Loading />}
-        {hasResults ? <p>{`Resultado de álbuns de: ${termSearch}`}</p> : ""}
-        {results.length > 0 ? (
-          results.map((result) => {
-            const { artistName, artworkUrl100, collectionId, collectionName } =
-              result;
-            return (
-              <div key={collectionId}>
-                <Link
-                  data-testid={`link-to-album-${collectionId}`}
-                  to={`/trybetunes/album/${collectionId}`}
-                >
-                  <img src={artworkUrl100} alt={artistName} />
-                  <p>{collectionName}</p>
-                  <p>{artistName}</p>
-                </Link>
-              </div>
-            );
-          })
-        ) : (
-          <p>Nenhum álbum foi encontrado</p>
-        )}
-      </div>
+        <main data-testid="page-search" className="main-container">
+          <form>
+            <input
+              data-testid="search-artist-input"
+              type="text"
+              name="search"
+              value={search}
+              onChange={this.handleChange}
+            />
+            <button
+              data-testid="search-artist-button"
+              type="button"
+              disabled={isDisabled}
+              onClick={this.searchResult}
+            >
+              Pesquisar
+            </button>
+          </form>
+          {isLoading && <Loading />}
+          {hasResults ? <p>{`Resultado de álbuns de: ${termSearch}`}</p> : ""}
+          {results.length > 0 ? (
+            results.map((result) => {
+              const {
+                artistName,
+                artworkUrl100,
+                collectionId,
+                collectionName,
+              } = result;
+              return (
+                <div key={collectionId}>
+                  <Link
+                    data-testid={`link-to-album-${collectionId}`}
+                    to={`/trybetunes/album/${collectionId}`}
+                  >
+                    <img src={artworkUrl100} alt={artistName} />
+                    <p>{collectionName}</p>
+                    <p>{artistName}</p>
+                  </Link>
+                </div>
+              );
+            })
+          ) : (
+            <p>Nenhum álbum foi encontrado</p>
+          )}
+        </main>
+      </>
     );
   }
 }

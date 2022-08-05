@@ -68,72 +68,74 @@ class ProfileEdit extends React.Component {
       isDisabled,
     } = this.state;
     return (
-      <div data-testid="page-profile-edit">
+      <>
         <Header />
-        <p>Editar Perfil</p>
-        {isLoading ? (
-          <Loading />
-        ) : (
-          <form>
-            <label htmlFor="name">
-              Editar nome:
-              <input
-                data-testid="edit-input-name"
-                id="name"
-                name="name"
-                type="text"
-                value={name}
-                onChange={this.handleChange}
-              />
-            </label>
+        <main data-testid="page-profile-edit">
+          <p>Editar Perfil</p>
+          {isLoading ? (
+            <Loading />
+          ) : (
+            <form>
+              <label htmlFor="name">
+                Editar nome:
+                <input
+                  data-testid="edit-input-name"
+                  id="name"
+                  name="name"
+                  type="text"
+                  value={name}
+                  onChange={this.handleChange}
+                />
+              </label>
 
-            <label htmlFor="email">
-              Editar e-mail:
-              <input
-                data-testid="edit-input-email"
-                id="email"
-                name="email"
-                type="email"
-                value={email}
-                onChange={this.handleChange}
-              />
-            </label>
+              <label htmlFor="email">
+                Editar e-mail:
+                <input
+                  data-testid="edit-input-email"
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={email}
+                  onChange={this.handleChange}
+                />
+              </label>
 
-            <label htmlFor="description">
-              Editar descrição:
-              <input
-                data-testid="edit-input-description"
-                id="description"
-                name="description"
-                type="text"
-                value={description}
-                onChange={this.handleChange}
-              />
-            </label>
+              <label htmlFor="description">
+                Editar descrição:
+                <input
+                  data-testid="edit-input-description"
+                  id="description"
+                  name="description"
+                  type="text"
+                  value={description}
+                  onChange={this.handleChange}
+                />
+              </label>
 
-            <label htmlFor="image">
-              Url da imagem:
-              <input
-                data-testid="edit-input-image"
-                id="image"
-                name="image"
-                type="text"
-                value={image}
-                onChange={this.handleChange}
-              />
-            </label>
+              <label htmlFor="image">
+                Url da imagem:
+                <input
+                  data-testid="edit-input-image"
+                  id="image"
+                  name="image"
+                  type="text"
+                  value={image}
+                  onChange={this.handleChange}
+                />
+              </label>
 
-            <button
-              data-testid="edit-button-save"
-              type="button"
-              disabled={isDisabled}
-              onClick={this.saveProfile}
-            >
-              Salvar
-            </button>
-          </form>
-        )}
-      </div>
+              <button
+                data-testid="edit-button-save"
+                type="button"
+                disabled={isDisabled}
+                onClick={this.saveProfile}
+              >
+                Salvar
+              </button>
+            </form>
+          )}
+        </main>
+      </>
     );
   }
 }
