@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap");
 
 * {
   margin: 0;
@@ -9,7 +8,7 @@
 }
 
 body {
-  font-family: 'Cinzel', serif;
+  font-family: "Cinzel", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
@@ -150,4 +149,26 @@ header a:active {
 
 /* Search page */
 
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80px;
+}
 
+.search-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.search-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 300px;
+}

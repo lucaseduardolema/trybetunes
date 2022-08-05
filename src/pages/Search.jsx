@@ -59,50 +59,57 @@ class Search extends React.Component {
     return (
       <>
         <Header />
-        <main data-testid="page-search" className="main-container">
-          <form>
-            <input
-              data-testid="search-artist-input"
-              type="text"
-              name="search"
-              value={search}
-              onChange={this.handleChange}
-            />
-            <button
-              data-testid="search-artist-button"
-              type="button"
-              disabled={isDisabled}
-              onClick={this.searchResult}
-            >
-              Pesquisar
-            </button>
-          </form>
-          {isLoading && <Loading />}
-          {hasResults ? <p>{`Resultado de álbuns de: ${termSearch}`}</p> : ""}
-          {results.length > 0 ? (
-            results.map((result) => {
-              const {
-                artistName,
-                artworkUrl100,
-                collectionId,
-                collectionName,
-              } = result;
-              return (
-                <div key={collectionId}>
-                  <Link
-                    data-testid={`link-to-album-${collectionId}`}
-                    to={`/trybetunes/album/${collectionId}`}
-                  >
+        <main data-testid="page-search">
+          <div className="search-container">
+            <form>
+              <input
+                data-testid="search-artist-input"
+                type="text"
+                name="search"
+                value={search}
+                onChange={this.handleChange}
+              />
+              <button
+                data-testid="search-artist-button"
+                type="button"
+                disabled={isDisabled}
+                onClick={this.searchResult}
+              >
+                Pesquisar
+              </button>
+            </form>
+            {hasResults ? (
+              <p>{`Resultado de álbuns de: ${termSearch}`}</p>
+            ) : (
+              <p>Digite um album ou artista</p>
+            )}
+          </div>
+          <div className="search-main">
+            {isLoading ? (
+              <Loading />
+            ) : (
+              results.map((result) => {
+                const {
+                  artistName,
+                  artworkUrl100,
+                  collectionId,
+                  collectionName,
+                } = result;
+                return (
+                  <div key={collectionId} className='search-card'>
                     <img src={artworkUrl100} alt={artistName} />
-                    <p>{collectionName}</p>
-                    <p>{artistName}</p>
-                  </Link>
-                </div>
-              );
-            })
-          ) : (
-            <p>Nenhum álbum foi encontrado</p>
-          )}
+                    <p>{artistName.slice(0, 30)}</p>
+                    <Link
+                      data-testid={`link-to-album-${collectionId}`}
+                      to={`/trybetunes/album/${collectionId}`}
+                    >
+                      <p>{collectionName.slice(0, 30)}</p>
+                    </Link>
+                  </div>
+                );
+              })
+            )}
+          </div>
         </main>
       </>
     );
