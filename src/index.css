@@ -1,9 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap");
 
-* {
+:root {
+  --headerSize: 115px;
+  --mainColor: #ff9800;
+}
+
+*,
+::before,
+::after {
   margin: 0;
   padding: 0;
+  overflow-wrap: break-word;
   box-sizing: border-box;
 }
 
@@ -13,9 +21,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   height: 100vh;
+  overflow: auto;
   /* background-image: url(./images/vecteezy_earphone-headset-musical-instrument-low-poly-wireframe_.jpg);
   background-size: cover;
   background-repeat: no-repeat; */
+}
+
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: black; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #32323d; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  /* border: 3px solid orange;  creates padding around scroll thumb */
 }
 
 code {
@@ -108,10 +131,13 @@ header {
   justify-content: space-around;
   align-items: center;
   gap: 0 20%;
-  min-height: 110px;
+  min-height: var(--headerSize);
+  min-width: 100%;
   font-family: "Dancing Script", cursive;
   color: white;
   background-color: black;
+  position: fixed;
+  z-index: 99999;
 }
 
 .logo-header {
@@ -149,12 +175,117 @@ header a:active {
 
 /* Search page */
 
+.page-search {
+  display: flex;
+  flex-direction: row;
+  padding-top: var(--headerSize);
+}
+
+.page-search a {
+  background: linear-gradient(
+    to bottom,
+    var(--mainColor) 0%,
+    var(--mainColor) 100%
+  );
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 3px 3px;
+  color: #000;
+  text-decoration: none;
+}
+
+.page-search a:hover {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: 0 100%;
+  background-size: auto 6px;
+  background-repeat: repeat-x;
+  text-decoration: none;
+}
+
+.page-search aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  background-color: #32323d;
+  color: white;
+  min-height: calc(100vh - var(--headerSize));
+  border-right: #000000 solid 1px;
+}
+
+.page-search section {
+  overflow-y: auto;
+  background-color: #60606c;
+  width: 80%;
+}
+
+.initial-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - var(--headerSize));
+  text-align: center;
+  gap: 10px;
+  padding: 0 5px;
+}
+
+.result-asside {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px 0;
+  width: 100%;
+  /* max-height: calc(100vh - var(--headerSize)); */
+  min-height: calc(100vh - var(--headerSize));
+  overflow: auto;
+  padding-top: 30px;
+}
+
+.info-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px 0;
+  font-size: 12px;
+  width: 100%;
+}
+
+.info-card img {
+  width: 50px;
+  border-radius: 100%;
+}
+
 .search-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 80px;
+  height: 100px;
+  gap: 10px 0;
+}
+
+.search-container input {
+  margin: 0 10px;
+  width: 400px;
+  height: 25px;
+  border-radius: 15px;
+  padding-left: 15px;
+}
+
+.search-container button {
+  width: 60px;
+  height: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-container button:active {
+  position: relative;
+  bottom: 5px;
 }
 
 .search-main {
@@ -169,6 +300,21 @@ header a:active {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 4px 0;
   width: 300px;
+}
+
+.search-card:hover {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px 0;
+  width: 300px;
+  position: relative;
+  bottom: 5px;
+}
+
+.artist-name {
+  font-size: 14px;
 }
