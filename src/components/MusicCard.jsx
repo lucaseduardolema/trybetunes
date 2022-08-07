@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { addSong, removeSong } from "../services/favoriteSongsAPI";
-import Loading from "./Loading";
+import ReactLoading from "react-loading";
 
 class MusicCard extends React.Component {
   constructor() {
@@ -35,20 +35,22 @@ class MusicCard extends React.Component {
         isLoading: true,
         isFav: !prevState.isFav,
       }),
-      async () => {
-        const { objTotal } = this.props;
-        const { isFav } = this.state;
-        if (isFav) {
-          await addSong(objTotal);
-          this.setState({
-            isLoading: false,
-          });
-        } else {
-          await removeSong(objTotal);
-          this.setState({
-            isLoading: false,
-          });
-        }
+      () => {
+        setTimeout(async () => {
+          const { objTotal } = this.props;
+          const { isFav } = this.state;
+          if (isFav) {
+            await addSong(objTotal);
+            this.setState({
+              isLoading: false,
+            });
+          } else {
+            await removeSong(objTotal);
+            this.setState({
+              isLoading: false,
+            });
+          }
+        }, 1000);
       }
     );
   };
@@ -57,11 +59,16 @@ class MusicCard extends React.Component {
     const { isLoading, isFav } = this.state;
     const { trackName, previewUrl, trackId } = this.props;
     return (
-      <div>
+      <div className="music-cards">
         {isLoading ? (
-          <Loading />
+          <ReactLoading
+            type="bars"
+            color="#f72585"
+            width="100px"
+            height="100px"
+          />
         ) : (
-          <div>
+          <div className="music-cards">
             <p>{trackName}</p>
             <audio data-testid="audio-component" src={previewUrl} controls>
               <track kind="captions" />O seu navegador não suporta o elemento{" "}
