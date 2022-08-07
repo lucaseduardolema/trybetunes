@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/trybetunes/static/css/main.fc28e589.chunk.css",
-    "main.js": "/trybetunes/static/js/main.b7f16a8c.chunk.js",
-    "main.js.map": "/trybetunes/static/js/main.b7f16a8c.chunk.js.map",
+    "main.css": "/trybetunes/static/css/main.dbb70207.chunk.css",
+    "main.js": "/trybetunes/static/js/main.dad1f4aa.chunk.js",
+    "main.js.map": "/trybetunes/static/js/main.dad1f4aa.chunk.js.map",
     "runtime-main.js": "/trybetunes/static/js/runtime-main.80235779.js",
     "runtime-main.js.map": "/trybetunes/static/js/runtime-main.80235779.js.map",
-    "static/js/2.3ccfee6d.chunk.js": "/trybetunes/static/js/2.3ccfee6d.chunk.js",
-    "static/js/2.3ccfee6d.chunk.js.map": "/trybetunes/static/js/2.3ccfee6d.chunk.js.map",
+    "static/js/2.0131520e.chunk.js": "/trybetunes/static/js/2.0131520e.chunk.js",
+    "static/js/2.0131520e.chunk.js.map": "/trybetunes/static/js/2.0131520e.chunk.js.map",
     "index.html": "/trybetunes/index.html",
-    "static/css/main.fc28e589.chunk.css.map": "/trybetunes/static/css/main.fc28e589.chunk.css.map",
-    "static/js/2.3ccfee6d.chunk.js.LICENSE.txt": "/trybetunes/static/js/2.3ccfee6d.chunk.js.LICENSE.txt",
+    "static/css/main.dbb70207.chunk.css.map": "/trybetunes/static/css/main.dbb70207.chunk.css.map",
+    "static/js/2.0131520e.chunk.js.LICENSE.txt": "/trybetunes/static/js/2.0131520e.chunk.js.LICENSE.txt",
     "static/media/index.css": "/trybetunes/static/media/vecteezy_headphones-clipart-design-illustartion_9384601_4.9956b69f.png"
   },
   "entrypoints": [
     "static/js/runtime-main.80235779.js",
-    "static/js/2.3ccfee6d.chunk.js",
-    "static/css/main.fc28e589.chunk.css",
-    "static/js/main.b7f16a8c.chunk.js"
+    "static/js/2.0131520e.chunk.js",
+    "static/css/main.dbb70207.chunk.css",
+    "static/js/main.dad1f4aa.chunk.js"
   ]
 }
