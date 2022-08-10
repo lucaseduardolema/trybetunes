@@ -49,16 +49,16 @@ class Favorites extends React.Component {
     return (
       <>
         <Header />
-        <main data-testid="page-favorites">
-          <p>Favoritos</p>
+        <main data-testid="page-favorites" className="page-favorites">
+          <h1>Favoritos</h1>
           {isLoading ? (
             <Loading />
           ) : (
-            <div>
+            <div className="favorite-container">
               {songs.map((song) => {
                 const { trackName, previewUrl, trackId, artworkUrl60 } = song;
                 return (
-                  <div key={trackId}>
+                  <div key={trackId} className='favorite'>
                     <p>{trackName}</p>
                     <img src={artworkUrl60} alt={trackName} />
                     <audio
@@ -69,19 +69,19 @@ class Favorites extends React.Component {
                       <track kind="captions" />O seu navegador não suporta o
                       elemento <code>audio</code>.
                     </audio>
+                    <input
+                      id={trackId}
+                      name="fav"
+                      type="checkbox"
+                      value={trackId}
+                      checked={isFav}
+                      onChange={this.handleFav}
+                    />
                     <label
                       htmlFor={trackId}
                       data-testid={`checkbox-music-${trackId}`}
                     >
                       Favorita
-                      <input
-                        id={trackId}
-                        name="fav"
-                        type="checkbox"
-                        value={trackId}
-                        checked={isFav}
-                        onChange={this.handleFav}
-                      />
                     </label>
                   </div>
                 );
