@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import { getFavoriteSongs, removeSong } from "../services/favoriteSongsAPI";
-import Loading from "../components/Loading";
+import ReactLoading from "react-loading";
 
 class Favorites extends React.Component {
   constructor() {
@@ -52,13 +52,18 @@ class Favorites extends React.Component {
         <main data-testid="page-favorites" className="page-favorites">
           <h1>Favoritos</h1>
           {isLoading ? (
-            <Loading />
+            <ReactLoading
+              type="bars"
+              color="#f72585"
+              width="100px"
+              height="100px"
+            />
           ) : (
             <div className="favorite-container">
               {songs.map((song) => {
                 const { trackName, previewUrl, trackId, artworkUrl60 } = song;
                 return (
-                  <div key={trackId} className='favorite'>
+                  <div key={trackId} className="favorite">
                     <p>{trackName}</p>
                     <img src={artworkUrl60} alt={trackName} />
                     <audio

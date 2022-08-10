@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import Header from "../components/Header";
-import Loading from "../components/Loading";
+import ReactLoading from "react-loading";
 import { getUser, updateUser } from "../services/userAPI";
 
 class ProfileEdit extends React.Component {
@@ -70,10 +70,15 @@ class ProfileEdit extends React.Component {
     return (
       <>
         <Header />
-        <main data-testid="page-profile-edit">
-          <p>Editar Perfil</p>
+        <main data-testid="page-profile-edit" className="page-profile-edit">
+          <h1>Editar Perfil</h1>
           {isLoading ? (
-            <Loading />
+            <ReactLoading
+              type="bars"
+              color="#f72585"
+              width="100px"
+              height="100px"
+            />
           ) : (
             <form>
               <label htmlFor="name">
