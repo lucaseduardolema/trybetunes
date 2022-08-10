@@ -82,7 +82,8 @@ class ProfileEdit extends React.Component {
           ) : (
             <form>
               <label htmlFor="name">
-                Editar nome:
+                Editar nome
+              </label>
                 <input
                   data-testid="edit-input-name"
                   id="name"
@@ -91,10 +92,10 @@ class ProfileEdit extends React.Component {
                   value={name}
                   onChange={this.handleChange}
                 />
-              </label>
 
               <label htmlFor="email">
-                Editar e-mail:
+                Editar e-mail
+              </label>
                 <input
                   data-testid="edit-input-email"
                   id="email"
@@ -103,10 +104,10 @@ class ProfileEdit extends React.Component {
                   value={email}
                   onChange={this.handleChange}
                 />
-              </label>
 
               <label htmlFor="description">
-                Editar descrição:
+                Editar descrição
+              </label>
                 <input
                   data-testid="edit-input-description"
                   id="description"
@@ -115,10 +116,10 @@ class ProfileEdit extends React.Component {
                   value={description}
                   onChange={this.handleChange}
                 />
-              </label>
 
               <label htmlFor="image">
-                Url da imagem:
+                Url da imagem
+              </label>
                 <input
                   data-testid="edit-input-image"
                   id="image"
@@ -127,7 +128,6 @@ class ProfileEdit extends React.Component {
                   value={image}
                   onChange={this.handleChange}
                 />
-              </label>
 
               <button
                 data-testid="edit-button-save"
